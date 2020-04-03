@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Weather-App</title>
+    <link rel="stylesheet" href="./font/Rimouski.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="app-title">
+            <p>Weather</p>
+        </div>
+        <div class="notification"></div>
+        <div class="weather-container">
+            <div class="weather-icon"><img src="./icons/unknown.png" /></div>
+            <div class="temperature-value">
+                <p>- °<span>C</span></p>
+            </div>
+            <div class="temperature-description">
+                <p>-</p>
+            </div>
+            <div class="location">
+                <p>-</p>
+            </div>
+            <ul class="foreCast">
+                <li class="fc1"><p class="dt">-</p><img src="./icons/unknown.png"  /><p class="desc">-</p><p class="temp">- °<span>C</span></p></li>
+                <li class="fc2"><p class="dt">-</p><img src="./icons/unknown.png"  /><p class="desc">-</p><p class="temp">- °<span>C</span></p></li>
+                <li class="fc3"><p class="dt">-</p><img src="./icons/unknown.png"  /><p class="desc">-</p><p class="temp">- °<span>C</span></p></li>
+                <li class="fc4"><p class="dt">-</p><img src="./icons/unknown.png"  /><p class="desc">-</p><p class="temp">- °<span>C</span></p></li>
+                <li class="fc5"><p class="dt">-</p><img src="./icons/unknown.png"  /><p class="desc">-</p><p class="temp">- °<span>C</span></p></li>
+            </ul>
+            <form autocomplete="off">
+                <div class="autocomplete">
+                    <input id="city" type="text" class="city" placeholder="City">
+                    <input id="country" type="text" class="country" placeholder="Country abbr.">
+                  </div>
+                  <div class="button">
+                  <input type="submit" value="Submit" class="submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+    <script src="./auto.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</body>
+
+</html>

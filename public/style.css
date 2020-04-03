@@ -1,0 +1,224 @@
+* {
+  font-family: 'Rimouski';
+}
+
+body {
+  background-color: #293251;
+}
+
+.container {
+  width: 340px;
+  height: 730px;
+  background-color: #fff;
+
+  display: block;
+  margin: 0 auto;
+
+  border-radius: 10px;
+  padding-bottom: 50px;
+}
+
+.app-title {
+  margin: 0 auto;
+  width: 300px;
+  height: 50px;
+  border-radius: 10px 10px 0 0;
+}
+
+.app-title p {
+  text-align: center;
+  padding: 15px;
+  margin: 0 auto;
+  font-size: 1.2em;
+  color: #293251;
+}
+
+.notification {
+  background-color: #f8d7da;
+  padding: 0 20px 0 20px;
+  display: none;
+}
+
+.notification p {
+  color: #721c24;
+  font-size: 1.2em;
+  margin: 0;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.weather-container {
+  width: 300px;
+  height: 260px;
+  background-color: #f4f9ff;
+  padding: 0 20px 0 20px;
+}
+
+.weather-icon {
+  width: 300px;
+  height: 128px;
+}
+
+.weather-icon img {
+  display: block;
+  margin: 0 auto;
+}
+
+.temperature-value {
+  width: 300px;
+  height: 60px;
+}
+
+.temperature-value p {
+  padding: 0;
+  margin: 0;
+  color: #293251;
+  font-size: 4em;
+  text-align: center;
+  cursor: pointer;
+}
+
+.temperature-value span {
+  color: #293251;
+  font-size: 0.5em;
+}
+
+.temperature-description p {
+  padding: 8px;
+  margin: 0;
+  color: #293251;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.location p {
+  margin: 0;
+  padding: 0;
+  color: #293251;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+.foreCast {
+  padding-top: 5px;
+  margin-bottom: 0;
+  list-style: none;
+}
+
+.foreCast li {
+  margin: 0 auto;
+}
+
+.dt {
+  float: left;
+  margin-left: -45px;
+}
+
+.foreCast img {
+  height: 40px;
+  width: 40px;
+  margin-left: 12px;
+  padding-left: 0px;
+  vertical-align: 90%;
+}
+
+.foreCast p {
+  display: inline-flex;
+}
+
+.desc {
+  padding-left: 20px;
+  vertical-align: 150%;
+  margin: 0 auto;
+}
+
+.temp {
+  float: right;
+  vertical-align: -15%;
+}
+
+.city,
+.country {
+  width: 100%;
+  height: 2rem;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: inset 0 0 5px 5px #f4f9ff;
+  border: 1px solid #293251;
+}
+
+input[type='text'] {
+  text-align: center;
+  font-size: medium;
+}
+
+input[type='text']::placeholder {
+  text-align: center;
+}
+
+.button {
+    display: flex;
+    justify-content: center
+}
+
+.submit {
+  box-shadow: inset 0px 1px 0px 0px #bee2f9;
+  background: linear-gradient(to bottom, #63b8ee 5%, #468ccf 100%);
+  background-color: #6894af;
+  border-radius: 6px;
+  border: 1px solid #3866a3;
+  display: block;
+  cursor: pointer;
+  color: #293251;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  padding: 6px 24px;
+  margin-top: 20px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #7cacde;
+}
+.submit:hover {
+  background: linear-gradient(to bottom, #468ccf 5%, #63b8ee 100%);
+  background-color: #468ccf;
+}
+.submit:active {
+  position: relative;
+  top: 1px;
+}
+
+.autocomplete {
+  position: relative;
+  display: inline-block;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  border-bottom: none;
+  border-top: none;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff; 
+  border-bottom: 1px solid #d4d4d4; 
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  background-color: #e9e9e9; 
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: DodgerBlue !important; 
+  color: #ffffff; 
+}
