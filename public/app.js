@@ -49,24 +49,12 @@ function fail(err) {
   noti.innerHTML = `<p>${err.message}</p>`;
 }
 
-/* const dt = new Date();
-const dformat = `${
-    (dt.getMonth()+1).toString().padStart(2, '0')}-${
-    dt.getDate().toString().padStart(2, '0')}-${
-    dt.getFullYear().toString().padStart(4, '0')} ${
-    dt.getHours().toString().padStart(2, '0')}:${
-    dt.getMinutes().toString().padStart(2, '0')}:${
-    dt.getSeconds().toString().padStart(2, '0')}`
-const todayHour = `${dformat[11]}${dformat[12]}` */
-
 const today = new Date();
 const todayDt = today.getTime();
 
-//http://api.openweathermap.org/data/2.5/forecast?lat=1.3896599030990173&lon=103.8941043007939&appid=82005d27a116c2880c8f0fcb866998a0
-
 //Request weather data from api
 function getWeather(lat, lon) {
-  const api = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}`;
+  const api = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}`;
 
   axios
     .get(api)
@@ -209,10 +197,9 @@ country.addEventListener('keyup', e => {
    whenSubmit();
   })
 
- //http://api.openweathermap.org/data/2.5/forecast?q=chicago,us&appid=82005d27a116c2880c8f0fcb866998a0
 
  function getWeatherwLoc(cityV, countryV) {
-  const api = `http://api.openweathermap.org/data/2.5/forecast?q=${cityV},${countryV}&appid=${key}`;
+  const api = `https://api.openweathermap.org/data/2.5/forecast?q=${cityV},${countryV}&appid=${key}`;
 
   axios
     .get(api)
