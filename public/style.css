@@ -1,21 +1,16 @@
-* {
-  font-family: 'Rimouski';
-}
-
 body {
   padding: 0;
   margin: 0;
   background-color: #293251;
+  font-family: 'Rimouski';
 }
 
 .container {
   width: 340px;
   height: 730px;
   background-color: #fff;
-
   display: block;
   margin: 0 auto;
-
   border-radius: 10px;
   padding-bottom: 50px;
 }
