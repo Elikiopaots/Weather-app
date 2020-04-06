@@ -16,7 +16,8 @@ const weather = {
   key3: {},
   key4: {},
   key5: {},
-  key6: {}
+  key6: {},
+  key7: {}
 };
 
 weather.unit = 'celsius';
@@ -52,7 +53,7 @@ function fail(err) {
 //https://api.openweathermap.org/data/2.5/forecast?lat=1.3896599030990173&lon=103.8941043007939&appid=82005d27a116c2880c8f0fcb866998a0
 
 const today = new Date();
-const todayDt = today.getTime();
+const todayDt = today.getTime()
 
 //Request weather data from api
 function getWeather(lat, lon) {
@@ -63,9 +64,10 @@ function getWeather(lat, lon) {
     .then(res => {
       const apiD = res.data;
       let u = 1;
-      for (let i = 0; i <= 5; i++) {
+      for (let i = 0; i <= 8; i++) {
         const apiDate = apiD.list[i].dt_txt;
-        const apiDt = new Date(apiDate.replace(/\s/, 'T')).getTime();
+        const apiT = apiDate.replace(/-/g,'/');
+        const apiDt = new Date(apiT).getTime();
         if (apiDt - todayDt >= 0) {
           weather[`key${u}`].dateTime = hourFormat(apiDate);
           weather[`key${u}`].temperature = Math.floor(
@@ -117,7 +119,7 @@ function displayWeather() {
   tempVal.innerHTML = `<p>${weather.key1.temperature}°<span>C</span></p>`;
   tempDesc.innerHTML = `<p>${weather.key1.description}</p>`;
   loc.innerHTML = `<p>${weather.key1.city}, ${weather.key1.country}</p>`;
-  for (let i = 1; i < 6; i++) {
+  for (let i = 2; i < 7; i++) {
     const weatherIcon = weather[`key${i}`].iconId;
     const weatherTemp = weather[`key${i}`].temperature;
     document.querySelector(`.fc${i}`).querySelector('.dt').innerHTML =
@@ -187,7 +189,7 @@ city.addEventListener('keyup', e => {
 })
 
 country.addEventListener('keyup', e => {
-  if (city.value && e.keyCode === 13 || city.value && e.keyCode === 9) {
+  if (city.value && e.keyCode === 13) {
     e.preventDefault();
     whenSubmit();
     city.focus();
@@ -214,9 +216,10 @@ country.addEventListener('keyup', e => {
         }
       const apiD = res.data;
       let u = 1;
-      for (let i = 0; i <= 5; i++) {
+      for (let i = 0; i <= 8; i++) {
         const apiDate = apiD.list[i].dt_txt;
-        const apiDt = new Date(apiDate.replace(/\s/, 'T')).getTime();
+        const apiT = apiDate.replace(/-/g,'/');
+        const apiDt = new Date(apiT).getTime();
         if (apiDt - todayDt >= 0) {
           weather[`key${u}`].dateTime = hourFormat(apiDate);
           weather[`key${u}`].temperature = Math.floor(
